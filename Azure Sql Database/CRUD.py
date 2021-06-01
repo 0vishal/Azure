@@ -1,8 +1,8 @@
 '''
 @Author: Vishal Salaskar
-@Date: 2021-05-20
+@Date: 2021-06-1
 @Last Modified by: Vishal Salaskar
-@Last Modified time: 2021-05-20
+@Last Modified time: 2021-06-1
 @Title : Program to connect to Azure Sql Database
 '''
 import pyodbc 

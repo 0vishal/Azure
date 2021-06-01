@@ -1,10 +1,9 @@
 '''
 @Author: Vishal Salaskar
-@Date: 2021-05-20
+@Date: 2021-06-01
 @Last Modified by: Vishal Salaskar
-@Last Modified time: 2021-05-20
-@Title : Program to1
- perform crud operations
+@Last Modified time: 2021-06-01
+@Title : Program to perform crud operations
 '''
 import CRUD as op
 
@@ -35,5 +34,5 @@ def Main():
             print("Enter correct option")
     except ValueError as e:
         print(e)         
-        
+
 Main()
