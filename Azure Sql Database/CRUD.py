@@ -60,10 +60,8 @@ class CRUD:
             org=input()
             print("Enter mobile")
             number=input()
-            value=(name,org,number) 
-
             cursor = self.conn.cursor()
-            cursor.execute("insert into newcustomers (name, organization, mobile) values (%s, %s, %s)",value)
+            cursor.execute("insert into newcustomers (name, organization, mobile) values (?, ?, ?)",[name,org,number])
             self.conn.commit()
             print(cursor.rowcount , "record inserted.")
         except Exception as e:
@@ -75,24 +73,23 @@ class CRUD:
         Function To update value in database table
         """
         try:
-            option =print("Enter the  value to edit 2.organization 3.mobile ")
+            print("Enter the  value to edit 2.organization 3.mobile ")
+            option =int(input())
             if option==1:
                     print("Edit organization:")
                     org= input()
                     print("Enter name of the person")
                     uname = input()
-                    value=(org,uname)
                     cursor = self.conn.cursor()
-                    cursor.execute("update newcustomrs set organization=%s where name=%s",value)
+                    cursor.execute("update newcustomers set organization= ?  where name= ?",[org, uname])
                     self.conn.commit()
             else:
                     print("Edit mobile")
                     number = input()
                     print("Enter name of the person")
                     uname = input()
-                    value=(number,uname)
                     cursor = self.conn.cursor()
-                    cursor.execute("update newcustomrs set organization=%s where name=%s",value)
+                    cursor.execute("update newcustomrs set organization= ? where name= ?",[number,uname])
                     self.conn.commit()
         except Exception as e:
 	        print(e)
@@ -100,14 +97,13 @@ class CRUD:
     def delete(self):
         """
 	    Description
- 	    Function To delete value in database table stocks data
+ 	    Function To delete value in database table 
 	    """
         try:
             print("Enter name to delete")
             name=input()
             cursor = self.conn.cursor()
-            value=(name,)
-            cursor.execute("delete from newcustomers where name=%s",value)
+            cursor.execute("delete from newcustomers where name= ?",[name])
             self.conn.commit()
 
         except Exception as e:
