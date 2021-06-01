@@ -17,7 +17,6 @@ class CRUD:
         password = os.getenv('PASSWORD')   
         driver= '{ODBC Driver 17 for SQL Server}'
         self.conn = pyodbc.connect('DRIVER='+str(driver)+';SERVER='+str(server)+';PORT=1433;DATABASE='+str(database)+';UID='+str(username)+';PWD='+str(password))
-        print(self.conn)
 
     def create(self):
         """
