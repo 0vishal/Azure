@@ -12,7 +12,7 @@ option = int(input("Enter the option : 1: Create 2: Read 3: Update 4: Delete 5. 
 def Main():
     """
 		Description
- 		Function To insert value in database table stocks data
+ 		Function To insert value in database table
 	"""
     try:
         if option==1:
