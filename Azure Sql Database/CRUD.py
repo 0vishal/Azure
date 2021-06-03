@@ -6,7 +6,7 @@
 @Title : Program to connect to Azure Sql Database
 '''
 import pyodbc 
-import os
+import os, log
 
 class CRUD: 
 
@@ -29,6 +29,7 @@ class CRUD:
             self.conn.commit()
             #closing the  connection
             self.conn.close()
+            log.logger("table successfully created")
         except Exception as e:
             print(e)    
 
@@ -44,6 +45,7 @@ class CRUD:
 
             myresult = cursor.fetchall()
             print(myresult)
+            log.logger("data successfully read from table")
         except Exception as e:
             print(e)
 
@@ -63,6 +65,7 @@ class CRUD:
             cursor.execute("insert into newcustomers (name, organization, mobile) values (?, ?, ?)",[name,org,number])
             self.conn.commit()
             print(cursor.rowcount , "record inserted.")
+            log.logger("row successfully inserted in table")
         except Exception as e:
             print(e)
 
@@ -82,6 +85,7 @@ class CRUD:
                     cursor = self.conn.cursor()
                     cursor.execute("update newcustomers set organization= ?  where name= ?",[org, uname])
                     self.conn.commit()
+                    log.logger("table successfully updated")
             else:
                     print("Edit mobile")
                     number = input()
@@ -90,6 +94,7 @@ class CRUD:
                     cursor = self.conn.cursor()
                     cursor.execute("update newcustomrs set organization= ? where name= ?",[number,uname])
                     self.conn.commit()
+                    log.logger("table successfully updated")
         except Exception as e:
 	        print(e)
 
@@ -104,6 +109,7 @@ class CRUD:
             cursor = self.conn.cursor()
             cursor.execute("delete from newcustomers where name= ?",[name])
             self.conn.commit()
+            log.logger("row successfully deleted")
 
         except Exception as e:
             print(e)    
