@@ -67,87 +67,99 @@ class DFOperations:
 		Description
  		Function To create a data factory with name and properties
 		"""
+        try:
 
-        rg_params = {'location':'westus'}
-        self.resource_client.resource_groups.create_or_update(self.rg_name, rg_params)
+            rg_params = {'location':'westus'}
+            self.resource_client.resource_groups.create_or_update(self.rg_name, rg_params)
 
-        #Create a data factory
-        df_resource = Factory(location='westus')
-        df = self.adf_client.factories.create_or_update(self.rg_name, self.df_name, df_resource)
-        print_item(df)
-        while df.provisioning_state != 'Succeeded':
-            df = self.adf_client.factories.get(self.rg_name, self.df_name)
-            time.sleep(1)    
+            #Create a data factory
+            df_resource = Factory(location='westus')
+            df = self.adf_client.factories.create_or_update(self.rg_name, self.df_name, df_resource)
+            print_item(df)
+            while df.provisioning_state != 'Succeeded':
+                df = self.adf_client.factories.get(self.rg_name, self.df_name)
+                time.sleep(1)    
+        except Exception as e:
+            print(e)
 
     def create_linkedservice(self):
         """
 		Description
  		Function To create a linked service connection for storage account in data factory
 		"""
+        try:
 
-        # IMPORTANT: specify the name and key of your Azure Storage account.
-        storage_string = SecureString(value=os.getenv('BLOBSTORAGESTRING'))
+            # IMPORTANT: specify the name and key of your Azure Storage account.
+            storage_string = SecureString(value=os.getenv('BLOBSTORAGESTRING'))
 
-        ls_azure_storage = LinkedServiceResource(properties=AzureStorageLinkedService(connection_string=storage_string)) 
-        ls = self.adf_client.linked_services.create_or_update(self.rg_name, self.df_name, self.ls_name, ls_azure_storage)
-        print_item(ls) 
+            ls_azure_storage = LinkedServiceResource(properties=AzureStorageLinkedService(connection_string=storage_string)) 
+            ls = self.adf_client.linked_services.create_or_update(self.rg_name, self.df_name, self.ls_name, ls_azure_storage)
+            print_item(ls)
+        except Exception as e:
+            print(e)     
 
     def create_dataset(self):
         """
 		Description
  		Function To create input and output dataset in data factory
 		"""
-        
-        print("Enter the filename to copy to destination")
-        filename = input()
-        # Create an Azure blob dataset (input)
-        ds_name = 'ds_in'
-        ds_ls = LinkedServiceReference(reference_name=self.ls_name)
-        blob_path = os.getenv('INPUTPATH')
-        blob_filename = filename
-        ds_azure_blob = DatasetResource(properties=AzureBlobDataset(
-            linked_service_name=ds_ls, folder_path=blob_path, file_name=blob_filename)) 
-        ds = self.adf_client.datasets.create_or_update(
-            self.rg_name, self.df_name, ds_name, ds_azure_blob)
-        print_item(ds)
+        try:
+            
+            print("Enter the filename to copy to destination")
+            filename = input()
+            # Create an Azure blob dataset (input)
+            ds_name = 'ds_in'
+            ds_ls = LinkedServiceReference(reference_name=self.ls_name)
+            blob_path = os.getenv('INPUTPATH')
+            blob_filename = filename
+            ds_azure_blob = DatasetResource(properties=AzureBlobDataset(
+                linked_service_name=ds_ls, folder_path=blob_path, file_name=blob_filename)) 
+            ds = self.adf_client.datasets.create_or_update(
+                self.rg_name, self.df_name, ds_name, ds_azure_blob)
+            print_item(ds)
 
-        # Create an Azure blob dataset (output)
-        dsOut_name = 'ds_out'
-        output_blobpath = os.getenv('OUTPUTPATH')
-        dsOut_azure_blob = DatasetResource(properties=AzureBlobDataset(linked_service_name=ds_ls, folder_path=output_blobpath))
-        dsOut = self.adf_client.datasets.create_or_update(
-            self.rg_name, self.df_name, dsOut_name, dsOut_azure_blob)
-        print_item(dsOut)    
+            # Create an Azure blob dataset (output)
+            dsOut_name = 'ds_out'
+            output_blobpath = os.getenv('OUTPUTPATH')
+            dsOut_azure_blob = DatasetResource(properties=AzureBlobDataset(linked_service_name=ds_ls, folder_path=output_blobpath))
+            dsOut = self.adf_client.datasets.create_or_update(
+                self.rg_name, self.df_name, dsOut_name, dsOut_azure_blob)
+            print_item(dsOut)    
 
-        act_name = os.getenv('ACTNAME')
-        blob_source = BlobSource()
-        blob_sink = BlobSink()
-        dsin_ref = DatasetReference(reference_name=ds_name)
-        dsOut_ref = DatasetReference(reference_name=dsOut_name)
-        self.copy_activity = CopyActivity(name=act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
+            act_name = os.getenv('ACTNAME')
+            blob_source = BlobSource()
+            blob_sink = BlobSink()
+            dsin_ref = DatasetReference(reference_name=ds_name)
+            dsOut_ref = DatasetReference(reference_name=dsOut_name)
+            self.copy_activity = CopyActivity(name=act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
+        except Exception as e:
+            print(e)
 
     def run_pipeline(self):
         """
 		Description
  		Function To run a pipeline for the copy activity
 		"""
+        try:
 
-        p_name = os.getenv('PNAME')
-        params_for_pipeline = {}
-        p_obj = PipelineResource(activities=[self.copy_activity], parameters=params_for_pipeline)
-        p = self.adf_client.pipelines.create_or_update(self.rg_name, self.df_name, p_name, p_obj)
-        print_item(p)
+            p_name = os.getenv('PNAME')
+            params_for_pipeline = {}
+            p_obj = PipelineResource(activities=[self.copy_activity], parameters=params_for_pipeline)
+            p = self.adf_client.pipelines.create_or_update(self.rg_name, self.df_name, p_name, p_obj)
+            print_item(p)
 
-        # Create a pipeline run
-        run_response = self.adf_client.pipelines.create_run(self.rg_name, self.df_name, p_name, parameters={})
+            # Create a pipeline run
+            run_response = self.adf_client.pipelines.create_run(self.rg_name, self.df_name, p_name, parameters={})
 
-        # Monitor the pipeline run
-        time.sleep(30)
-        pipeline_run = self.adf_client.pipeline_runs.get(
-            self.rg_name, self.df_name, run_response.run_id)
-        print("\n\tPipeline run status: {}".format(pipeline_run.status))
-        filter_params = RunFilterParameters(
-            last_updated_after=datetime.now() - timedelta(1), last_updated_before=datetime.now() + timedelta(1))
-        query_response = self.adf_client.activity_runs.query_by_pipeline_run(
-            self.rg_name, self.df_name, pipeline_run.run_id, filter_params)
-        print_activity_run_details(query_response.value[0])
+            # Monitor the pipeline run
+            time.sleep(30)
+            pipeline_run = self.adf_client.pipeline_runs.get(
+                self.rg_name, self.df_name, run_response.run_id)
+            print("\n\tPipeline run status: {}".format(pipeline_run.status))
+            filter_params = RunFilterParameters(
+                last_updated_after=datetime.now() - timedelta(1), last_updated_before=datetime.now() + timedelta(1))
+            query_response = self.adf_client.activity_runs.query_by_pipeline_run(
+                self.rg_name, self.df_name, pipeline_run.run_id, filter_params)
+            print_activity_run_details(query_response.value[0])
+        except Exception as error:
+            print(error)    
