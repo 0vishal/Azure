@@ -12,7 +12,7 @@ from azure.mgmt.datafactory import DataFactoryManagementClient
 from azure.mgmt.datafactory.models import *
 from datetime import datetime, timedelta
 import time
-import os
+import os, log
 
 def print_item(group):
     """Print an Azure object instance."""
@@ -78,7 +78,8 @@ class DFOperations:
             print_item(df)
             while df.provisioning_state != 'Succeeded':
                 df = self.adf_client.factories.get(self.rg_name, self.df_name)
-                time.sleep(1)    
+                time.sleep(1)
+            log.logger("Data factory successfully created")        
         except Exception as e:
             print(e)
 
@@ -95,6 +96,7 @@ class DFOperations:
             ls_azure_storage = LinkedServiceResource(properties=AzureStorageLinkedService(connection_string=storage_string)) 
             ls = self.adf_client.linked_services.create_or_update(self.rg_name, self.df_name, self.ls_name, ls_azure_storage)
             print_item(ls)
+            log.logger("linked service successfully created")
         except Exception as e:
             print(e)     
 
@@ -132,6 +134,7 @@ class DFOperations:
             dsin_ref = DatasetReference(reference_name=ds_name)
             dsOut_ref = DatasetReference(reference_name=dsOut_name)
             self.copy_activity = CopyActivity(name=act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
+            log.logger("Dataset successfully taken and created")
         except Exception as e:
             print(e)
 
@@ -161,5 +164,6 @@ class DFOperations:
             query_response = self.adf_client.activity_runs.query_by_pipeline_run(
                 self.rg_name, self.df_name, pipeline_run.run_id, filter_params)
             print_activity_run_details(query_response.value[0])
+            log.logger("pipeline successfully run")
         except Exception as error:
             print(error)    
