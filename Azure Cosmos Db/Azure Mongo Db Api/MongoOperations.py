@@ -1,5 +1,5 @@
 import pymongo
-import os,log
+import os,log,json
 
 from pymongo.message import query
 
@@ -24,8 +24,10 @@ class MongoDb:
                                         {"_id":"3","custid": "102","custname":"Karan","company": "TCS"},
                                         {"_id":"4","custid": "103","custname":"rahul","company": "GVT"},
                                         {"_id":"5","custid": "104","custname":"kartik","company": "PVG"}]
+                        with open('customerdata.json') as file:
+                                file_data = json.load(file)                
 
-                        self.collection.insert_many(customerlist)
+                        self.collection.insert_many(file_data)
                         print("Values Inserted ")
                         log.logger("successfully inserted values") 
                 except Exception as error:
@@ -49,9 +51,11 @@ class MongoDb:
 		Description
  		Function To update document in collection
 	        """
-                try:
-                        query = { "_id": "2" }
-                        newvalues = { "$set": { "company": "Canyon" } }
+                try:    
+                        select_id = input("select the id to be updated")
+                        company_name = input("select the company name ")
+                        query = { "_id": select_id }
+                        newvalues = { "$set": { "company": company_name } }
                         self.collection.update_one(query,newvalues)
                         
                         for value in self.collection.find():
@@ -66,8 +70,9 @@ class MongoDb:
 		Description
  		Function To delete document in container
 	        """
-                try:
-                        query = { "_id": "5" }
+                try:    
+                        select_id = input("select the id to be deleted")
+                        query = { "_id": select_id }
                         self.collection.delete_one(query)
 
                         for value in self.collection.find():
