@@ -1,3 +1,11 @@
+"""
+@Author: Vishal Salaskar
+@Date: 2021-06-15
+@Last Modified by: Vishal Salaskar
+@Last Modified time: 2021-06-15
+@Title : perform basic operation on azure cosmodb
+"""
+
 from CosmosOperations import CosmosDb
 
 
@@ -8,7 +16,7 @@ def main():
 	"""
     try:
         cosmosdb_obj=CosmosDb()
-        option=int(input("select option of operation\n0 : 1.insert data\n\n 2.read data\n 3.delete data \n"))
+        option=int(input("select option of operation\n 1.insert data\n 2.read data\n 3.delete data \n"))
         if(option==1):
             cosmosdb_obj.insert_data()
         elif(option==2):
