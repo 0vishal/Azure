@@ -1,5 +1,7 @@
 import pymongo
-import os
+import os,log
+
+from pymongo.message import query
 
 class MongoDb:
 
@@ -13,22 +15,47 @@ class MongoDb:
 
         def insert_data(self):
                 try:
-                        customerlist = [{"_id":"1","custid": "100","custname":"vishal","company": "WIP"}
-                        {"_id":"2","custid": "101","custname":"sarvesg","company": "HCP"}
-                        {"_id":"3","custid": "102","custname":"Karan","company": "TCS"}
-                        {"_id":"4","custid": "103","custname":"rahul","company": "GVT"}
-                        {"_id":"5","custid": "104","custname":"kartik","company": "PVG"}]
-
+                        customerlist = [{"_id":"1","custid": "100","custname":"vishal","company": "WIP"},
+                                        {"_id":"2","custid": "101","custname":"sarvesg","company": "HCP"},
+                                        {"_id":"3","custid": "102","custname":"Karan","company": "TCS"},
+                                        {"_id":"4","custid": "103","custname":"rahul","company": "GVT"},
+                                        {"_id":"5","custid": "104","custname":"kartik","company": "PVG"}]
 
                         self.collection.insert_many(customerlist)
+                        print("Values Inserted ")
+                        log.logger("successfully inserted values") 
                 except Exception as error:
-                        print(error, "Already exists")
+                        print(error,"Already exists")
+                        log.logger("values already exists") 
 
         def read_data(self):
                 try:
                         for value in self.collection.find():
-                                print(value)                
+                                print(value)
+                        log.logger("successfully read values from collection")                         
+                except Exception as error:
+                        print(error)   
+
+        def update_data(self):
+                try:
+                        query = { "_id": "2" }
+                        newvalues = { "$set": { "company": "Canyon" } }
+                        self.collection.update_one(query,newvalues)
+                        
+                        for value in self.collection.find():
+                            print(value) 
+                        log.logger("successfully updated values")       
                 except Exception as error:
                         print(error)
+                        print("Already updated")
 
-        def update_data()                
+        def delete_data(self):
+                try:
+                        query = { "_id": "5" }
+                        self.collection.delete_one(query)
+
+                        for value in self.collection.find():
+                                print(value)
+                        log.logger("successfully deleted document")        
+                except Exception as error:
+                        print(error)                                
