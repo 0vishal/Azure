@@ -14,6 +14,10 @@ class MongoDb:
                 self.collection = self.db[collection_name]
 
         def insert_data(self):
+                """
+		Description
+ 		Function To insert document in collections
+	        """
                 try:
                         customerlist = [{"_id":"1","custid": "100","custname":"vishal","company": "WIP"},
                                         {"_id":"2","custid": "101","custname":"sarvesg","company": "HCP"},
@@ -29,6 +33,10 @@ class MongoDb:
                         log.logger("values already exists") 
 
         def read_data(self):
+                """
+		Description
+ 		Function To read documents in the collections
+	        """
                 try:
                         for value in self.collection.find():
                                 print(value)
@@ -37,6 +45,10 @@ class MongoDb:
                         print(error)   
 
         def update_data(self):
+                """
+		Description
+ 		Function To update document in collection
+	        """
                 try:
                         query = { "_id": "2" }
                         newvalues = { "$set": { "company": "Canyon" } }
@@ -50,6 +62,10 @@ class MongoDb:
                         print("Already updated")
 
         def delete_data(self):
+                """
+		Description
+ 		Function To delete document in container
+	        """
                 try:
                         query = { "_id": "5" }
                         self.collection.delete_one(query)
