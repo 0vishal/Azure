@@ -1,0 +1,8 @@
+[
+    {"_id":"6","category": "Home","name":"Vegetablecutter","description": "All types of cutters"},
+    {"_id":"7","category": "Beauty","name":"Eyeliner","description": "Different thickness of liquid"},
+    {"_id":"8","category": "Fitness","name":"Band","description": "Different types of weight bands"},
+    {"_id":"9","category": "Electronics","name":"Mobile","description": "All about mobile phones"},
+    {"_id":"10","category": "Electronices","name":"Headphone","description": "All about earphones"}
+]
+    
