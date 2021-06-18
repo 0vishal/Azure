@@ -34,9 +34,6 @@ class StoredProcedure:
                 'serverScript': file_contents,
             }     
             self.create_sproc = self.container.scripts.create_stored_procedure(body=sprocedure)
-            print(self.create_sproc)
-            self.get_sproc = self.container.scripts.get_stored_procedure(self.create_sproc)
-            print(self.get_sproc)
         except Exception:    
             print("Already exists")
 
@@ -61,6 +58,6 @@ class StoredProcedure:
             "income": income,
             "isComplete":False
             }
-            result = self.container.scripts.execute_stored_procedure(sproc='spAddItem',params=[[new_item]], partition_key=lastname) 
+            self.container.scripts.execute_stored_procedure(sproc='spAddItem',params=[[new_item]], partition_key=lastname) 
         except Exception as error:
             print(error)    
