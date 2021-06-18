@@ -1,3 +1,10 @@
+'''
+ @Author: Vishal Salaskar
+ @Date: 2021-06-17
+ @Last Modified by: Vishal Salaskar
+ @Last Modified time: 2021-06-17 
+ @Title : To call the stored procedure
+'''
 import StoredProcedure as sp 
 
 def Main():
