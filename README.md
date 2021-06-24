@@ -1,4 +1,4 @@
-# Azure
+# Azure Databricks 
 
 *Create azure communiity Edition of databricks
 create a account with details
