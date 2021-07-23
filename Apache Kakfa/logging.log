@@ -1,0 +1,152 @@
+INFO :__main__: 2021-07-23 14:02:56,421: test
+INFO :__main__: 2021-07-23 14:03:07,721: test
+INFO :log: 2021-07-23 14:04:01,599: test
+INFO :kafka.producer.kafka: 2021-07-23 14:04:03,268: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:04:03,269: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+INFO :log: 2021-07-23 14:05:08,550: test
+INFO :kafka.conn: 2021-07-23 14:05:10,192: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:05:40,221: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:05:40,223: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:05:40,284: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+INFO :kafka.producer.kafka: 2021-07-23 14:06:10,204: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:06:10,204: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+INFO :log: 2021-07-23 14:09:28,930: test
+INFO :kafka.conn: 2021-07-23 14:09:30,446: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:10:00,488: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:10:00,488: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:10:00,549: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+INFO :kafka.producer.kafka: 2021-07-23 14:10:30,446: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:10:30,446: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+INFO :log: 2021-07-23 14:12:15,257: test
+INFO :kafka.conn: 2021-07-23 14:12:16,873: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:12:46,877: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:12:46,877: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:12:46,939: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:13:16,980: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:13:16,980: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:13:17,043: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:13:47,087: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:13:47,088: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:13:47,149: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:14:17,157: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:14:17,157: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:14:17,220: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:14:47,258: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:14:47,258: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:14:47,319: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:15:17,354: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:15:17,354: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:15:17,417: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:15:47,462: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:15:47,462: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:15:47,525: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:16:17,568: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:16:17,568: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:16:17,633: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+INFO :kafka.producer.kafka: 2021-07-23 14:16:27,088: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:16:27,089: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+INFO :log: 2021-07-23 14:16:30,169: test
+INFO :kafka.conn: 2021-07-23 14:16:31,753: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:17:01,794: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:17:01,795: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:17:01,856: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:17:31,884: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:17:31,884: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:17:31,948: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:18:01,974: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:18:01,975: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:18:02,035: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:18:32,082: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:18:32,082: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:18:32,144: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+ERROR :kafka.conn: 2021-07-23 14:19:02,191: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> timed out
+INFO :kafka.conn: 2021-07-23 14:19:02,192: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:19:02,253: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+ERROR :kafka.conn: 2021-07-23 14:19:32,307: Connection attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> timed out
+INFO :kafka.conn: 2021-07-23 14:19:32,307: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: timeout
+INFO :kafka.conn: 2021-07-23 14:19:32,370: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+INFO :kafka.producer.kafka: 2021-07-23 14:19:57,244: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:19:57,245: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+INFO :log: 2021-07-23 14:30:58,006: test
+INFO :kafka.conn: 2021-07-23 14:30:59,924: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+INFO :kafka.conn: 2021-07-23 14:31:21,834: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+INFO :log: 2021-07-23 14:31:26,556: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,557: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,558: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,558: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,559: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,559: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,562: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,563: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,563: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,564: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,564: data produced has been sent
+INFO :kafka.conn: 2021-07-23 14:31:26,564: <BrokerConnection node_id=0 host=192.168.0.5:9092 <connecting> [IPv4 ('192.168.0.5', 9092)]>: connecting to 192.168.0.5:9092 [('192.168.0.5', 9092) IPv4]
+INFO :log: 2021-07-23 14:31:26,564: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,565: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,565: data produced has been sent
+INFO :kafka.conn: 2021-07-23 14:31:26,566: <BrokerConnection node_id=0 host=192.168.0.5:9092 <connecting> [IPv4 ('192.168.0.5', 9092)]>: Connection complete.
+INFO :log: 2021-07-23 14:31:26,566: data produced has been sent
+INFO :kafka.conn: 2021-07-23 14:31:26,566: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+INFO :log: 2021-07-23 14:31:26,567: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,570: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,571: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,572: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,573: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,574: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,576: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,576: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,576: data produced has been sent
+INFO :log: 2021-07-23 14:31:26,576: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,580: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,583: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,586: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,590: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,593: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,594: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,594: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,594: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,596: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,597: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,598: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,600: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,601: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,603: data produced has been sent
+INFO :log: 2021-07-23 14:33:06,604: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,620: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,623: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,625: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,630: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,631: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,631: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,632: data produced has been sent
+INFO :log: 2021-07-23 14:34:46,633: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,638: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,642: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,645: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,649: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,650: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,651: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,652: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,653: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,654: data produced has been sent
+INFO :log: 2021-07-23 14:36:26,656: data produced has been sent
+INFO :kafka.producer.kafka: 2021-07-23 14:37:18,239: Closing the Kafka producer with 0 secs timeout.
+INFO :kafka.producer.kafka: 2021-07-23 14:37:18,239: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
